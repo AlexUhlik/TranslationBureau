@@ -1,0 +1,1 @@
+[![Build, Test and Publish](https://github.com/AlexUhlik/TranslationBureau/actions/workflows/build.yml/badge.svg)](https://github.com/AlexUhlik/TranslationBureau/actions/workflows/build.yml)
