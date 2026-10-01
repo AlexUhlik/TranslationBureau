@@ -50,7 +50,14 @@ jobs:
 
       # Шаг 6. Выполнение модульных тестов
       - name: Выполнение модульных тестов
-        run: dotnet test --configuration Release --no-build --verbosity normal
+        run: dotnet test --configuration Release --no-build --verbosity normal --collect:"XPlat Code Coverage"
+        
+      - name: Публикация отчёта о покрытии
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report-${{ matrix.os }}
+          path: '**/TestResults/**/coverage.cobertura.xml'
+          retention-days: 30
 
       # Шаг 7. Публикация Web-приложения
       - name: Публикация приложения
